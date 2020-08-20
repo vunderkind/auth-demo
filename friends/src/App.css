@@ -1,5 +1,45 @@
+body{
+  box-sizing: border-box;
+  background: rgb(255, 190, 190);
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
 .App {
   text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2em;
+  background-color: white;
+}
+form {
+  margin: 0 auto;
+  font-size: 1.2em;
+  text-align: center;
+}
+input {
+  padding: 20px;
+  margin: 0.2em 0px;
+  width: 30vw;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid black;
+  background: rgb(255, 255, 255);
+  font-size: inherit;
+  text-align: inherit;
+
+}
+button {
+  width: inherit/2;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 0.4em auto;
+  font-size: inherit;
+  text-align: inherit;
+  background: white;
 }
 
 .App-logo {
