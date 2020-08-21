@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 
-function App() {
+function Login() {
   return (
     <div className="App">
       <h2>Log in to the kini</h2>
@@ -17,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
