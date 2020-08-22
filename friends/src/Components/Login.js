@@ -1,11 +1,15 @@
 import React, {useState} from 'react';
+import axiosWithAuth from '../utils/axiosWithAuth';
 import '../App.css';
 
 function Login() {
   const [credentials, setCredentials] = useState({})
   const handleSubmit = (e)=> {
     e.preventDefault()
-    setCredentials({...credentials})
+    axiosWithAuth().post('http://localhost:5000/api/friends', credentials)
+    .then(res=> localStorage.setItem('token', res.data.token))
+    props.history.push('/')
+    
   }
   const handleChange =(e)=> {
     console.log(e.target.name)
