@@ -12,10 +12,8 @@ const App = ()=> {
             <Link to="/login">Go to login</Link>
             <Link to='/dashboard'>Go to dashboard</Link>
         </Route>
-        <Route path="/login"><Login/></Route>
-        <PrivateRoute path='/dashboard'>
-            <Dashboard/>
-        </PrivateRoute>
+        <Route path="/login" component={Login}/>
+        <PrivateRoute component={Dashboard}/>
 
     </Router>
     )

@@ -1,15 +1,18 @@
 import React, {useState} from 'react';
-import axiosWithAuth from '../utils/axiosWithAuth';
+import Dashboard from '../Components/Dashboard'
+import PrivateRoute from '../Components/PrivateRoute';
+import {axiosWithAuth} from '../utils/axiosWithAuth';
 import '../App.css';
 
-function Login() {
+function Login(props) {
   const [credentials, setCredentials] = useState({})
   const handleSubmit = (e)=> {
     e.preventDefault()
-    axiosWithAuth().post('http://localhost:5000/api/friends', credentials)
-    .then(res=> localStorage.setItem('token', res.data.token))
-    props.history.push('/')
-    
+    axiosWithAuth().post('http://localhost:5000/api/login', credentials)
+    .then(res=> {
+      localStorage.setItem('token', res.data.token);
+      props.history.push('/FriendsList')
+  })
   }
   const handleChange =(e)=> {
     console.log(e.target.name)
