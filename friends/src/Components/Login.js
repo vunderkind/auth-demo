@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 function Login(props) {
   const [credentials, setCredentials] = useState({})
+  const [status, setStatus] = useState()
   const handleSubmit = (e)=> {
     e.preventDefault()
     axiosWithAuth().post('http://localhost:5000/api/login', credentials)
     .then(res=> {
+      setStatus(res.status)
       localStorage.setItem('token', res.data.payload);
       props.history.push('/FriendsList')
   })
@@ -23,6 +26,7 @@ function Login(props) {
   }
   return (
     <div className="App">
+      <Link to="/">Back home</Link>
       <h2>Log in to the kini</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" name='username' value={credentials.username} onChange={handleChange} placeholder="Log in"/>
