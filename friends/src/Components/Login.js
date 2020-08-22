@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import Dashboard from '../Components/Dashboard'
-import PrivateRoute from '../Components/PrivateRoute';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
 import '../App.css';
 
@@ -10,7 +8,7 @@ function Login(props) {
     e.preventDefault()
     axiosWithAuth().post('http://localhost:5000/api/login', credentials)
     .then(res=> {
-      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('token', res.data.payload);
       props.history.push('/FriendsList')
   })
   }

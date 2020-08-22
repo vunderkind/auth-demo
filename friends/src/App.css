@@ -29,7 +29,14 @@ input {
   background: rgb(255, 255, 255);
   font-size: inherit;
   text-align: inherit;
-
+}
+.friends {
+  background: white;
+  padding: 2em;
+  margin: 1em;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: center;
 }
 button {
   width: inherit/2;
